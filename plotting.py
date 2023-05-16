@@ -20,5 +20,3 @@ def loss_plot(epoch_losses, epochs):
     plt.legend()
     plt.show()
 
-
-#def plot_saliency():
