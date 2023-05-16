@@ -21,8 +21,9 @@ def predict_acc(test_loader, device, model):
             _, predicted = torch.max(outputs.data, 1)
             total += labels.size(0)
             correct += (predicted == labels).sum().item()
+            #print(total)
 
-    print(f'Accuracy of the network on the 12000 test images: {100 * correct // total} %')
+    print(f'Accuracy of the network on the {total} test images: {100 * correct // total} %')
 
 
 def predict_class_acc(classes, test_loader, model):
@@ -62,4 +63,3 @@ def test_prediction(test_loader, classes, batch_size, model):
     _, predicted = torch.max(output, 1)
 
     print('Predicted: ', ' '.join(f'{classes[predicted[j]]}' for j in range(batch_size)))
-
